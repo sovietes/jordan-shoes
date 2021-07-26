@@ -1,9 +1,7 @@
 <template>
   <div>
     <Header />
-    <BackJordan />
     <Main />
-    <Products />
     <Footer />
   </div>
 </template>

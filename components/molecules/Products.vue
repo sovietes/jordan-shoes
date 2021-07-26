@@ -1,8 +1,13 @@
 <template>
   <section class="products">
     <div class="container">
-      <div v-for="product in products" :key="product.id" class="item">
-        <img :src="getLocale(product)">
+      <div
+        v-for="product in products"
+        :key="product.id"
+        v-scroll-reveal
+        class="item"
+      >
+        <img :src="getLocale(product)" />
       </div>
     </div>
   </section>
@@ -54,49 +59,49 @@ export default Vue.extend({
   methods: {
     getLocale(item: any) {
       return require(`@/assets/img/${item.origin}`)
-    }
+    },
   },
 })
 </script>
 <style scoped>
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem 1rem;
-    margin: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1rem;
+  margin: 0 1rem;
 }
 
 .item {
-    background: var(--gray-color);
-    width: 300px;
-    height: 302px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
+  background: var(--gray-color);
+  width: 300px;
+  height: 302px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
 }
 
 img {
-    display: block;
-    max-width: 90%;
-    width: 100%;
-    margin-left: -5px;
+  display: block;
+  max-width: 90%;
+  width: 100%;
+  margin-left: -5px;
 }
 
 .products {
-    max-width: 1300px;
-    margin: 0 auto;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1300px) {
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .products {
-        max-width: 700px;
-    }
+  .products {
+    max-width: 700px;
+  }
 }
 </style>

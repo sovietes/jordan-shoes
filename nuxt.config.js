@@ -33,13 +33,19 @@ export default {
         rel: 'stylesheet',
       },
     ],
+
+    script: [
+      {
+        src: 'https://unpkg.com/scrollreveal'
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/global.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '@/plugins/vue-scroll-reveal', ssr: false }, '@/plugins/typed'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [{ path: '@/components', pathPrefix: false }],

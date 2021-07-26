@@ -1,6 +1,7 @@
 <template>
     <main>
         <Title />
+        <Products />
     </main>
 </template>
 

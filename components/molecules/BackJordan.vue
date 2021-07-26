@@ -1,11 +1,18 @@
 <template>
   <section class="presentation">
     <div class="text-presentation">
-      <p class="title">A melhor loja de Jordan</p>
-      <p class="description">
-        O tênis Jordan é fruto de uma velha e forte<br />parceria entre a Nike e
-        o jogador Michael Jordan.
-      </p>
+      <vue-typed-js :type-speed="50" :strings="['A melhor loja de Jordan']">
+        <p class="title typing"></p>
+      </vue-typed-js>
+      <vue-typed-js
+        :contentType="'html'"
+        :type-speed="50"
+        :strings="[
+          'O tênis Jordan é fruto de uma velha e<br> forte parceria entre a Nike e o jogador Michael Jordan.',
+        ]"
+      >
+        <p class="description typing"></p>
+      </vue-typed-js>
     </div>
   </section>
 </template>
@@ -33,6 +40,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   filter: brightness(50%);
   width: 100%;
   z-index: -1;
